@@ -299,25 +299,27 @@ export default function AnimatedBentoGrid() {
   const containerRef = useRef(null);
 
   const handleClick = (path, shapeName) => {
-    if (shapeName === "green" || shapeName === "blue" || shapeName === "gray") {
+    if (["green", "red", "blue", "yellow"].includes(shapeName)) {
       const targetRef =
         shapeName === "green"
           ? insideRef.current
-          : shapeName === "blue"
-          ? pursuitRef.current
-          : aboutRef.current;
+          : shapeName === "red"
+            ? pursuitRef.current
+            : shapeName === "blue"
+              ? aboutRef.current
+              : moreRef.current; // Add this line for yellow
+
       const tl = gsap.timeline({
         onComplete: () => router.push(path),
       });
 
-      // Fade out other divs quickly
       tl.to(
         [
-          moreRef.current,
           coverRef.current,
-          shapeName === "green" ? pursuitRef.current : insideRef.current,
-          shapeName === "blue" ? aboutRef.current : pursuitRef.current,
-          shapeName === "gray" ? null : aboutRef.current,
+          shapeName !== "green" && insideRef.current,
+          shapeName !== "red" && pursuitRef.current,
+          shapeName !== "blue" && aboutRef.current,
+          shapeName !== "yellow" && moreRef.current,
         ].filter(Boolean),
         {
           opacity: 0,
@@ -325,7 +327,6 @@ export default function AnimatedBentoGrid() {
           ease: "power3.inOut",
         }
       )
-        // Expand target div to fill the entire viewport
         .to(targetRef, {
           width: "100vw",
           height: "100vh",
@@ -337,7 +338,6 @@ export default function AnimatedBentoGrid() {
           duration: 0.8,
           ease: "power3.inOut",
         })
-        // Fade out target div
         .to(
           targetRef,
           {
@@ -443,20 +443,20 @@ export default function AnimatedBentoGrid() {
             top: "0%",
           },
           {
-            name: "blue",
+            name: "red",
             color: "#FD5C63",
             ref: pursuitRef,
-            path: "/blue",
+            path: "/red",
             width: "41%",
             height: "48%",
             left: "3%",
             top: "52%",
           },
           {
-            name: "gray",
+            name: "blue",
             color: "#7CB9E8",
             ref: aboutRef,
-            path: "/gray",
+            path: "/blue",
             width: "11%",
             height: "48%",
             left: "45%",
@@ -519,7 +519,7 @@ export default function AnimatedBentoGrid() {
                 [With cover image]
               </h1>
             )}
-            {shape.name === "blue" && (
+            {shape.name === "red" && (
               <div className="flex flex-col items-center justify-center w-full h-full px-4">
                 <h1
                   className="text-white font-bold text-center tracking-wider leading-tight w-full"
@@ -541,7 +541,7 @@ export default function AnimatedBentoGrid() {
                 </h1>
               </div>
             )}
-            {shape.name === "gray" && (
+            {shape.name === "blue" && (
               <div className="flex items-center justify-center w-full h-full">
                 <h1
                   className="text-white font-bold text-center tracking-wider leading-tight"

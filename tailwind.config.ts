@@ -11,6 +11,9 @@ export default {
     extend: {
       fontFamily: {
         robotoCondensed: ["RobotoCondensed", "sans-serif"],
+        crustaceans: ["var(--font-crustaceans)", "cursive"],
+        // space: ["var(--font-space-mono)", "monospace"],
+        ivypresto: ["var(--font-ivypresto)", "serif"],
       },
       colors: {
         background: "hsl(var(--background))",

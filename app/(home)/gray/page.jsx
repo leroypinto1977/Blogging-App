@@ -422,7 +422,7 @@ function GallerySection() {
                           }}
                           className="inline-block"
                         >
-                          {word} 
+                          {word}
                         </motion.span>
                       ))}
                   </motion.p>
@@ -705,7 +705,6 @@ export default function GrayPage() {
       },
     });
 
-    // Enable smooth scrolling (basic implementation without ScrollSmoother)
     document.body.style.overflow = "auto";
     window.scrollTo(0, 0);
 
@@ -715,7 +714,10 @@ export default function GrayPage() {
   }, []);
 
   return (
-    <div ref={containerRef} className="h-[100vh] overflow-y-auto bg-blue-50">
+    <div
+      ref={containerRef}
+      className="h-[100vh] overflow-y-auto overflow-x-hidden bg-blue-50"
+    >
       <div
         ref={panelsRef}
         className="flex h-screen w-[500vw] flex-nowrap"

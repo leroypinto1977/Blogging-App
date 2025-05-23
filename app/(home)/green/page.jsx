@@ -383,12 +383,14 @@ export default function InterviewPage() {
       {/* Header Section */}
 
       <header className="py-6 text-center">
-        <h1 className="text-2xl text-black font-script">Varsha Gopisankar</h1>
+        <h1 className="text-6xl text-black pt-3 font-crustaceans">
+          Varsha Gopisankar
+        </h1>
       </header>
 
       {/* 1st Section: Hero with three blog posts */}
 
-      <section className="grid grid-cols-1 md:grid-cols-3 gap-6 py-12 min-h-[700px]">
+      <section className="grid grid-cols-1 md:grid-cols-3 gap-6 pt-6 pb-12 min-h-[700px]">
         <div ref={headerLeftRef} className="flex flex-col">
           <div className="relative aspect-[3/4]">
             <Image
@@ -398,10 +400,12 @@ export default function InterviewPage() {
               className="object-cover rounded-lg"
             />
           </div>
-          <div className="mt-4">
-            <span className="text-sm">Interview with</span>
-            <h2 className="text-lg font-bold">Jessica Woods</h2>
-            <p className="text-xs mt-1">March 22, 2025</p>
+          <div className="mt-6 ">
+            {/* <span className="text-sm">Interview with</span> */}
+            <h2 className="text-2xl  font-ivypresto">
+              Interview with Jessica Woods
+            </h2>
+            <p className="text-sm pt-3">Varsha Gopisankar · Mar 8, 2025</p>
           </div>
         </div>
 
@@ -413,10 +417,25 @@ export default function InterviewPage() {
               fill
               className="object-cover rounded-lg"
             />
-            <div className="absolute top-0 left-0 w-[80%] bg-white p-3 rounded-md">
+            {/* <div className="absolute top-0 left-0 w-[80%] bg-white p-3 rounded-md"> */}
+            {/* <div className="absolute top-0 left-0">
               <p className="text-xs">Varsha Gopisankar · Mar 8, 2025</p>
-              <h2 className="text-xl font-bold">
-                Interview with Photographer & UX Designer, Viola LeBlanc
+              <h2 className="text-2xl font-ivypresto w-[110%] bg-white p-3 pl-0 rounded-xl">
+                Interview with Photographer &
+              </h2>
+              <h2 className="text-2xl font-ivypresto bg-white p-3 pl-0 rounded-xl rounded-t-none">
+                UX Designer, Viola LeBlanc
+              </h2>
+            </div> */}
+            <div className="absolute top-0 left-0">
+              <p className="text-xs w-[150%] bg-white">
+                Varsha Gopisankar · Mar 8, 2025
+              </p>
+              <h2 className="text-2xl font-ivypresto w-[120%] bg-white p-3 pt-1 pl-0 rounded-none rounded-br-2xl">
+                Interview with Photographer &
+              </h2>
+              <h2 className="text-2xl font-ivypresto bg-white p-3 pt-1 pl-0 rounded-none rounded-br-2xl">
+                UX Designer, Viola LeBlanc
               </h2>
             </div>
           </div>
@@ -424,10 +443,11 @@ export default function InterviewPage() {
 
         <div ref={headerRightRef} className="flex flex-col">
           <div className="mb-4">
-            <h2 className="text-lg font-bold">The Art of Mindfulness</h2>
-            <p className="text-xs mt-1">Varsha Gopisankar · Mar 15, 2025</p>
-            <p className="text-sm mt-2">
-              Exploring how photography connects us to the present moment
+            <h2 className="text-2xl mt-2 font-ivypresto">
+              The Art of Mindfulness
+            </h2>
+            <p className="text-xs mt-3 mb-2">
+              Varsha Gopisankar · Mar 15, 2025
             </p>
           </div>
           <div className="relative aspect-[3/4]">
