@@ -219,11 +219,8 @@ const CategoriesSection = () => {
     folderRefs.current.forEach((folder, index) => {
       gsap.set(folder, {
         y: categories[index].y,
-        // y: 0,
         x: categories[index].x,
         position: "sticky",
-        // top: `${index * 50}px`,
-        // top: `-200px`,
         top: categories[index].top,
         zIndex: categories[index].z,
       });
@@ -303,12 +300,12 @@ export default function InterviewPage() {
     description:
       "Viola LeBlanc is an Photographer and UX Designer from New York. She has worked with Spotify, Nike, Chanel, Meta, and Square",
     image: [
-      "/images/lake-boats.jpg",
-      "/images/narrow-alley.jpg",
-      "/images/london-street.jpg",
-      "/images/vinyl-record.jpg",
-      "/images/notebook-stickers.jpg",
-      "/images/silhouette-sunset.jpg",
+      "/images/blogs/dummy.png",
+      "/images/blogs/dummy.png",
+      "/images/blogs/dummy.png",
+      "/images/blogs/dummy.png",
+      "/images/blogs/dummy.png",
+      "/images/blogs/dummy.png",
     ][index % 6],
   }));
 
@@ -417,16 +414,6 @@ export default function InterviewPage() {
               fill
               className="object-cover rounded-lg"
             />
-            {/* <div className="absolute top-0 left-0 w-[80%] bg-white p-3 rounded-md"> */}
-            {/* <div className="absolute top-0 left-0">
-              <p className="text-xs">Varsha Gopisankar · Mar 8, 2025</p>
-              <h2 className="text-2xl font-ivypresto w-[110%] bg-white p-3 pl-0 rounded-xl">
-                Interview with Photographer &
-              </h2>
-              <h2 className="text-2xl font-ivypresto bg-white p-3 pl-0 rounded-xl rounded-t-none">
-                UX Designer, Viola LeBlanc
-              </h2>
-            </div> */}
             <div className="absolute top-0 left-0">
               <p className="text-xs w-[150%] bg-white">
                 Varsha Gopisankar · Mar 8, 2025
